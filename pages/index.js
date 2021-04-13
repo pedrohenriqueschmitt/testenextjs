@@ -14,7 +14,7 @@ export default function Home() {
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          Bonatao
         </p>
 
         <div className="grid">
