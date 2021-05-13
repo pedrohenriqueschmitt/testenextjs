@@ -14,7 +14,7 @@ function Home(props) {
       <title>DTudo</title>
     </Head>
     <>
-      <Banner />
+      <Banner /> 
       <Help />
       <Secoes secoes={props.secoes} />
       <ListProdutos produtos={props.produtos.produtos} titulo={props.produtos.titulo}/>
