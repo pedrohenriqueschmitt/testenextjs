@@ -1,14 +1,11 @@
 import React from 'react';
-import Document, { Head as headdd, Main, NextScript } from 'next/document'
-import Head from 'next/head'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '../components/AppBar';
 import theme from '../config/theme';
 
-const APP_NAME = 'next-pwa example'
-const APP_DESCRIPTION = 'This is an example of using next-pwa plugin'
 import { GA_TRACKING_ID } from '../lib/gtag'
 
 export default class MyDocument extends Document {
@@ -20,18 +17,8 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang='en' dir='ltr'>
-        <headdd>
-          <meta name='application-name' content={APP_NAME} />
-          <meta name='apple-mobile-web-app-capable' content='yes' />
-          <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-          <meta name='apple-mobile-web-app-title' content={APP_NAME} />
-          <meta name='description' content={APP_DESCRIPTION} />
-          <meta name='format-detection' content='telephone=no' />
-          <meta name='mobile-web-app-capable' content='yes' />
-          <meta name='theme-color' content='#FFFFFF' />
-          <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' />
-          <meta name="theme-color" content={theme.palette.primary.main} />
+      <Html lang='en' dir='ltr'>
+        <Head>
           
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
           <link rel='apple-touch-icon' sizes='180x180' href='/icons/apple-touch-icon.png' />
@@ -81,14 +68,14 @@ export default class MyDocument extends Document {
           src="https://www.facebook.com/tr?id=2809185456032359&ev=PageView&noscript=1"` }} />
           {/*!-- End Facebook Pixel Code -->*/}
 
-        </headdd>
+        </Head>
         <body>
          {/*  <CssBaseline />
           <AppBar /> */}
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }

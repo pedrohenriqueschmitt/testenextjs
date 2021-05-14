@@ -138,9 +138,14 @@ export async function carregarProdutos(categoria, buscarPor, pagina=1) {
         
     for(var chave=0; chave<produtos.length; chave++) {
         const imagem = await fetchImagem(produtos[chave].id);
+        
         try{
             produtos[chave].imagem = imagem.data.data.imProduto;
-        }catch{}
+            if (produtos[chave].imagem == undefined)
+            produtos[chave].imagem = '';
+        }catch{
+            produtos[chave].imagem = '';
+        }
     }
 
     // Verificar preços, e adiciona aos produtos

@@ -33,9 +33,10 @@ export default function Produto(props) {
     const classes = useStyles();
     const [loadImagem, setloadImagem] = useState();
 
+    console.log(props.imagem);
     const load = () =>{
         try{
-            if (!isEmpty(props.imagem))
+            if (!isEmpty(props.imagem) && props.imagem != undefined)
                 setloadImagem(props.imagem);
             else
                 setloadImagem(require(`../../img/Produtos/erro.png`));

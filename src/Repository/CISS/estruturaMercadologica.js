@@ -20,6 +20,7 @@ export async function carregarSecoes() {
     const token = await buscaToken();
     API.defaults.headers.common['Authorization'] = 'Bearer '+token;
 
+
     const data = await fetchSecao({
         "clausulas":[
             {
@@ -43,7 +44,8 @@ export async function carregarSecoes() {
         return { erro: 'Não possível carregar os produtos. Tente mais tarde.' };
     }
 
-    
+    //console.log(data);
+
     const secoes = data.data.data.map(function(secao) {
         return {
           "id": secao.idcategoria,

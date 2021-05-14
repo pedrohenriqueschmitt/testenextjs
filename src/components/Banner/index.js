@@ -10,7 +10,7 @@ export default function Categoria() {
                 alignItems="flex-start">
                 <Grid item xs={12} spacing={10} justify="space-evenly"
                     alignItems="flex-start" style={{
-                        background: 'url(blah.jpg) 50% 50% no-repeat',
+                        background: '50% 50% no-repeat',
                         width: '300px',
                     }}>
                     <img style={{ width: "100%" }} src={Banner_Principal} />

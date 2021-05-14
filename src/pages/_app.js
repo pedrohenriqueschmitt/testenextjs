@@ -14,10 +14,12 @@ import Link from '@material-ui/core/Link';
 import * as gtag from '../lib/gtag';
 import FacebookPixel from '../Facebook/Pixel';
 import { Amplify } from "aws-amplify";
-import awsExports from "../aws-exports";
+//import awsExports from "../aws-exports";
 
-Amplify.configure({ ...awsExports, ssr: true });
+//Amplify.configure({ ...awsExports, ssr: true });
 
+const APP_NAME = 'next-pwa example'
+const APP_DESCRIPTION = 'This is an example of using next-pwa plugin'
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -61,6 +63,17 @@ export default function MyApp(props) {
       <Head>
         <title>DTudo</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <meta name='application-name' content={APP_NAME} />
+          <meta name='apple-mobile-web-app-capable' content='yes' />
+          <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+          <meta name='apple-mobile-web-app-title' content={APP_NAME} />
+          <meta name='description' content={APP_DESCRIPTION} />
+          <meta name='format-detection' content='telephone=no' />
+          <meta name='mobile-web-app-capable' content='yes' />
+          <meta name='theme-color' content='#FFFFFF' />
+          <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' />
+          <meta name="theme-color" content={theme.palette.primary.main} />
+          
       </Head>
 
       <ThemeProvider theme={theme}>
