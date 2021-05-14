@@ -13,6 +13,11 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import * as gtag from '../lib/gtag';
 import FacebookPixel from '../Facebook/Pixel';
+import { Amplify } from "aws-amplify";
+import awsExports from "../aws-exports";
+
+Amplify.configure({ ...awsExports, ssr: true });
+
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
